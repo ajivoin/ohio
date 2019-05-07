@@ -1,0 +1,35 @@
+---
+layout: default
+style: about.css
+script: about.js
+---
+
+<div class="toggle-button">
+    <div id="about-page-btn" class="toggle-option selected"><h2><strong>About</strong></h2></div>
+    <div id="media-page-btn" class="toggle-option"><h2><strong>Media</strong></h2></div>
+</div>
+
+<div class="about-content">
+    <div id="about-page">
+        <div class="red-header">
+            OHI/O<br>
+            ABOUT US
+        </div>
+        <br>
+
+        <!-- Jekyll does not fully support markdown includes so this is the workaround -->
+        {% capture m1 %}{% include about.md %}{% endcapture %}
+        {{ m1 | markdownify }}
+    </div>
+    <div id="media-page" style="display: none;">
+        <div class="red-header">
+            OHI/O<br>
+            MEDIA
+        </div>
+        <br>
+
+        {% capture m2 %}{% include media.md %}{% endcapture %}
+        {{ m2 | markdownify }}
+    </div>
+    <br><br><br><br>
+</div>
